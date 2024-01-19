@@ -9,10 +9,12 @@ public class BankApp {
 
         // 얘가 buffer
         try {
-            PreparedStatement pstmt = conn.prepareStatement("insert into account_tb(password, balance, created_at) values(?, ?, now())");
+            PreparedStatement pstmt = conn.prepareStatement(
+                    "insert into account_tb(password, balance, created_at) values(?, ?, now())");
+
             // 0 없이 1부터 시작
-            pstmt.setString(1,"1234");
-            pstmt.setInt(2,1000);
+            pstmt.setString(3,"1234");
+            pstmt.setInt(4,5000);
             int num = pstmt.executeUpdate();
             System.out.println(num);
         } catch (Exception e) {
