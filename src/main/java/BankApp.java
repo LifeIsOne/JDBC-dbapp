@@ -53,11 +53,16 @@ public class BankApp {
             body = sc.nextLine();
 
 
-
-            String[] st1 = body.split("&");
-            String password = st1[0].split("=")[1];
+            if (action.equals("/account/1")) {
+                String[] st1 = body.split("&");
+                String balance = st1[0].split("=")[1];
+                int balance = Integer.parseInt(st1[1].split("=")[1]);
+                int number = Integer.parseInt(st1[1].split("=")[1]);
+                bankDAO.updateByNumber(balance,number);
+            }
 
         } else if (method.equals("DELETE")) {       //  DELETE
+            System.out.print("몇 번 컬럼을 지우시겠습니까?  : ");
             int number = Integer.parseInt(sc.nextLine());
             bankDAO.deleteByNumber(number);
         }
