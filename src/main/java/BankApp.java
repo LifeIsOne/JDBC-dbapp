@@ -11,14 +11,12 @@ public class BankApp {
 
         BankDAO dao = new BankDAO();
 
-        dao.deleteByNumber(number);
-
         int result = dao.deleteByNumber(number);
 
         if (result == 1)
-            System.out.println("삭제하지 못했습니다.");
-        else
             System.out.println("삭제되었습니다.");
+        else
+            System.out.println("삭제하지 못했습니다.");
 
     }
 }
