@@ -21,10 +21,10 @@ public class BankDAO {
         Connection conn = DBConnection.getInstance();               // 소켓
         try {
             String sql =
-                    "delete from account_tb where number =?";
-            PreparedStatement pstmt = conn.prepareStatement(sql);   // 오류나면 catch로 감
+                    "DELETE FROM account_tb WHERE number =?";
+            PreparedStatement pstmt = conn.prepareStatement(sql);   // 오류나면 catch
 
-            pstmt.setInt(1, number);                 // DB의 리턴
+            pstmt.setInt(1, number);                // DB의 리턴
             int num = pstmt.executeUpdate();
 
             return num;

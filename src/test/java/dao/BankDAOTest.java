@@ -5,9 +5,7 @@ import model.Account;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
-import java.sql.SQLOutput;
 import java.util.List;
-import java.util.concurrent.atomic.DoubleAccumulator;
 
 
 public class BankDAOTest {
