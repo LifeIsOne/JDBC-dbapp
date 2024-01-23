@@ -1,22 +1,13 @@
+import controller.BankController;
 import dao.BankDAO;
-
-import java.util.Scanner;
 
 public class BankApp {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("삭제할 계좌번호를 입력해주세요 : ");
-        int number = sc.nextInt();
+        String url = "selectAll";
 
         BankDAO dao = new BankDAO();
-
-        int result = dao.deleteByNumber(number);
-
-        if (result == 1)
-            System.out.println("삭제되었습니다.");
-        else
-            System.out.println("삭제하지 못했습니다.");
-
+        BankController con = new BankController(dao);   //  의존성 주입(Dependency Injection) : 객체 간의 의존성을 외부에서 주입. WHY? 객체 간의 결합도를 낮춰 유연하고 테스트 가능한 코드를 만들수 있음.
+        Dispatcher dis = new Dispatcher(con);
+        dis.route(url);
     }
 }
