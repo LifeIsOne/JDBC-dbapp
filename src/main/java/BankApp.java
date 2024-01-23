@@ -3,7 +3,7 @@ import dao.BankDAO;
 
 public class BankApp {
     public static void main(String[] args) {
-        String url = "insert";
+        String url = "/delete";
 
 
         //  객체 생성

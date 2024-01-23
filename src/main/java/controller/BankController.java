@@ -17,17 +17,16 @@ public class BankController {
 
         //  2. 유효성검사
         System.out.println("controller : insert➕");
-        dao.insert("Denny", 300);
+        dao.insert("YongJu", 3000);
     }
 
     @RequestMapping(uri="/delete")
     public void delete(){
 
         System.out.println("controller : delete➖");
-        dao.deleteByNumber(1);
+        dao.deleteByNumber(13);
 
     }
-
 
     @RequestMapping(uri="/update")
     public void update(){
